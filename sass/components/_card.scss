@@ -1,0 +1,156 @@
+.card {
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position:relative;
+    height: 52rem;
+    
+    &__side {
+        
+        height: 52rem;
+        transition: all .9s ease;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
+        position:absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        backface-visibility: hidden;
+        border-radius: 3px;
+        
+
+        &--front {
+            background-color: $color-white;
+        }
+
+        &--back {
+            transform: rotateY(180deg);
+
+            &-1 {
+                background-image: linear-gradient(
+                to right bottom, $color-secondary-light,$color-secondary-dark
+                );
+            }
+
+            &-2 {
+                background-image: linear-gradient(
+                to right bottom, $color-primary-light,$color-primary-dark
+                );
+            }
+
+            &-3 {
+                background-image: linear-gradient(
+                to right bottom, $color-tertiary-light,$color-tertiary-dark
+                );
+            }
+        }
+        
+    }
+    &__cta {   
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        width:90%;
+        transform: translate(-50%, -50%);
+
+        
+    }
+
+    
+    &__price-box {
+        position:relative;
+        color:$color-white;
+        text-transform: uppercase;
+        margin-bottom: 8rem;
+        
+    }
+    &__price-only {
+        font-size: 1.6rem;
+    }
+    &__price-value {
+        font-weight: 200;
+        font-size: 6rem;
+        
+    }
+
+    &__picture {
+        background-size: cover;
+        height:22rem;
+        background-blend-mode: screen;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        &--1 {
+            
+            background-image: linear-gradient(to right bottom, $color-secondary-light,$color-secondary-dark),url(../img/nat-5.jpg);
+        }
+        &--2 {
+            
+            background-image: linear-gradient(to right bottom, $color-primary-light,$color-primary-dark),url(../img/nat-6.jpg);
+        }
+        &--3 {
+            
+            background-image: linear-gradient(to right bottom, $color-tertiary-light,$color-tertiary-dark),url(../img/nat-7.jpg);
+        }
+    }
+    
+    &__heading {
+        font-size:3rem;
+            text-transform: uppercase;
+            text-align:right;
+            color:$color-white;
+            font-weight:300;
+            right:2rem;
+            top:12rem;
+            width:75%;
+            position:absolute;
+        &-span {
+            padding: 1rem 1.5rem;
+            -webkit-box-decoration-break: clone;
+            box-decoration-break: clone;
+            &--1 {
+                
+                background-image: linear-gradient(
+                    to right bottom, rgba($color-secondary-light,.8),rgba($color-secondary-dark,0.8)
+                    );
+            }
+            &--2 {
+                
+                background-image: linear-gradient(
+                    to right bottom, rgba($color-primary-light,.8),rgba($color-primary-dark,0.8)
+                    );
+            }
+            &--3 {
+                
+                background-image: linear-gradient(
+                    to right bottom, rgba($color-tertiary-light,.8),rgba($color-tertiary-dark,0.8)
+                    );
+            }
+        }
+    }
+    &__details {
+        text-decoration: none;
+        font-size:1.4rem;
+        font-weight:400;
+        text-align:center;
+        color:grey;
+        margin-top: 3rem;
+
+        ul {
+            list-style: none;
+            margin:0 6rem;
+            li {
+                margin: 0 auto;
+                padding:1rem;
+                &:not(:last-child) {
+                    border-bottom: 1px solid lighten(grey,40%);
+                }
+            }
+        }
+    }
+    &:hover &__side--front {
+        transform: rotateY(180deg);
+    }
+
+    &:hover &__side--back {
+        transform: rotateY(0deg);
+    }
+}
